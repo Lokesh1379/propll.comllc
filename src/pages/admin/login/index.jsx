@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Eye, EyeOff, ShieldCheck, Lock, Mail } from "lucide-react";
+import { ShieldCheck, Lock, Mail } from "lucide-react";
 import "./styels.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setAccesToken, setAdminDetails } from "../../../features/admin";
 const AdminLogin = () => {
+  const { baseUrl } = useSelector((state) => state.commonProps);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "propll.ceo@propll.com",
@@ -27,8 +28,7 @@ const AdminLogin = () => {
     };
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
-
+        `${baseUrl}/api/auth/login`,
         loginData,
         {
           headers: {

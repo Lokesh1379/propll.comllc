@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setAccesToken, setAdminDetails } from "../../../features/admin";
+import { RootState } from "@/store/store";
 
 /* -------------------- Types -------------------- */
 
@@ -29,7 +30,7 @@ const AdminLogin: React.FC = () => {
     email: "propll.ceo@propll.com",
     password: "Propll.ceo1@propll.com",
   });
-
+  const { baseUrl } = useSelector((state: RootState) => state.commonProps);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
@@ -50,10 +51,10 @@ const AdminLogin: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
+    console.log(`${baseUrl}/api/auth/login`);
     try {
       const response = await axios.post<LoginResponse>(
-        "http://localhost:5000/api/auth/login",
+        `${baseUrl}/api/auth/login`,
         formData,
         {
           headers: {
@@ -69,7 +70,7 @@ const AdminLogin: React.FC = () => {
       }
     } catch (err) {
       const error = err as AxiosError<{ message?: string }>;
-
+      console.log(error);
       setError(error.response?.data?.message || "Invalid email or password");
     } finally {
       setLoading(false);
