@@ -123,7 +123,7 @@ const Navbar = () => {
                 >
                   P
                 </strong>
-                opll
+                ropll
               </span>
               <span
                 className={`text-[10px] font-semibold tracking-widest uppercase mt-0.5 ${

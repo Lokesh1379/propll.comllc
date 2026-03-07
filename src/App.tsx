@@ -40,6 +40,8 @@ import CreateAdminModal from "./pages/admin/admins/components/CreateAdminModal";
 import CareersPage from "./pages/carrers";
 import JobDetailsCard from "./pages/carrers/components/JobPost";
 import Coretechnologies from "./pages/coreTechnologies";
+import ProtectedRoute from "./ProtectedRoutes";
+import Unauthorized from "./pages/unauthorized/Unauthorized";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -123,11 +125,19 @@ const App = () => (
               path="/specialists"
               element={<AdvancedDataSpecialistsSection />}
             />
+            <Route path="/unauthorized" element={<Unauthorized />} />
 
             {/* Admin  Routes */}
+
             <Route path="/admin" element={<AdminLogin />} />
-            <Route path="/admins" element={<AdminCreation />} />
-            <Route path="/jobs" element={<JobListPage />} />
+            <Route
+              element={
+                <ProtectedRoute allowedRoles={["admin", "super_admin"]} />
+              }
+            >
+              <Route path="/admins" element={<AdminCreation />} />
+              <Route path="/jobs" element={<JobListPage />} />
+            </Route>
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

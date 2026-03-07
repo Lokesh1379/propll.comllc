@@ -4,7 +4,11 @@ import { Loader2 } from "lucide-react";
 import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setAccesToken, setAdminDetails } from "../../../features/admin";
+import {
+  setAccesToken,
+  setAdminDetails,
+  setIsAdminLoggedIn,
+} from "../../../features/admin";
 import { RootState } from "@/store/store";
 
 /* -------------------- Types -------------------- */
@@ -27,8 +31,8 @@ interface LoginResponse {
 
 const AdminLogin: React.FC = () => {
   const [formData, setFormData] = useState<LoginFormData>({
-    email: "propll.ceo@propll.com",
-    password: "Propll.ceo1@propll.com",
+    email: "",
+    password: "",
   });
   const { baseUrl } = useSelector((state: RootState) => state.commonProps);
   const [loading, setLoading] = useState<boolean>(false);
@@ -51,7 +55,6 @@ const AdminLogin: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
-    console.log(`${baseUrl}/api/auth/login`);
     try {
       const response = await axios.post<LoginResponse>(
         `${baseUrl}/api/auth/login`,
@@ -65,12 +68,13 @@ const AdminLogin: React.FC = () => {
 
       if (response.data.token) {
         dispatch(setAccesToken(response.data.token));
+        dispatch(setIsAdminLoggedIn(true));
         dispatch(setAdminDetails(response.data.admin));
         navigate("/admins");
       }
     } catch (err) {
       const error = err as AxiosError<{ message?: string }>;
-      console.log(error);
+      console.log(error.response);
       setError(error.response?.data?.message || "Invalid email or password");
     } finally {
       setLoading(false);

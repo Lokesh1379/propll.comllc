@@ -7,8 +7,6 @@ import {
   BsX,
 } from "react-icons/bs";
 import { FiLogOut, FiMenu } from "react-icons/fi";
-
-import logo from "@/assets/propll-logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAdminTab } from "@/features/commonProps";
@@ -103,12 +101,20 @@ const Sidebar = () => {
               </button>
 
               <div className="flex items-center gap-2">
-                <img
-                  src={logo}
-                  alt="Propll Logo"
-                  className="w-10 h-10 shadow-lg rounded-lg object-cover"
-                />
-                <span className="font-bold text-lg text-[#0a66c2]">Propll</span>
+                <div className="flex flex-col">
+                  <span
+                    className={`text-2xl font-bold tracking-tight text-zinc-600`}
+                  >
+                    <strong className="text-blue-700">P</strong>
+                    ropll
+                  </span>
+                  <span
+                    className={`text-[10px] font-semibold tracking-widest uppercase mt-0.5 text-zinc-600
+                }`}
+                  >
+                    .COM LLC
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -142,14 +148,18 @@ const Sidebar = () => {
               >
                 {/* Mobile Sidebar Header */}
                 <div className="flex items-center justify-between p-4 border-b border-slate-200">
-                  <div className="flex items-center gap-2">
-                    <img
-                      src={logo}
-                      alt="Propll Logo"
-                      className="w-8 h-8 shadow-lg rounded-lg object-cover"
-                    />
-                    <span className="font-bold text-lg text-[#0a66c2]">
-                      Propll
+                  <div className="flex flex-col">
+                    <span
+                      className={`text-2xl font-bold tracking-tight text-zinc-600`}
+                    >
+                      <strong className="text-blue-700">P</strong>
+                      ropll
+                    </span>
+                    <span
+                      className={`text-[10px] font-semibold tracking-widest uppercase mt-0.5 text-zinc-600
+                }`}
+                    >
+                      .COM LLC
                     </span>
                   </div>
                   <button
@@ -236,24 +246,18 @@ const Sidebar = () => {
       <div className="flex flex-col gap-8 p-4">
         {/* Logo */}
         <div className="flex items-center gap-3 px-2 h-10">
-          <img
-            src={logo}
-            alt="Propll Logo"
-            className="w-10 h-10 shadow-lg rounded-lg object-cover"
-          />
-          <AnimatePresence>
-            {isOpen && (
-              <motion.span
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
-                transition={{ duration: 0.2 }}
-                className="font-bold text-xl tracking-tight text-[#0a66c2]"
-              >
-                Propll
-              </motion.span>
-            )}
-          </AnimatePresence>
+          <div className="flex flex-col">
+            <span className={`text-2xl font-bold tracking-tight text-zinc-600`}>
+              <strong className="text-blue-700">P</strong>
+              ropll
+            </span>
+            <span
+              className={`text-[10px] font-semibold tracking-widest uppercase mt-0.5 text-zinc-600
+                }`}
+            >
+              .COM LLC
+            </span>
+          </div>
         </div>
 
         {/* Navigation */}

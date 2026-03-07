@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   // baseUrl: "http://localhost:5000",
-  baseUrl: "https://propll-server.vercel.app",
+  baseUrl: "https://propll-server-1.onrender.com",
   adminTab: "Admins",
   popUpMessage: {
     isOpen: false,
