@@ -99,10 +99,10 @@ export default function ContactUs() {
                 <div>
                   <p className="text-sm text-slate-400">Email</p>
                   <a
-                    href="mailto:contact@propll.com"
+                    href="mailto:Hr@propll.com"
                     className="text-blue-400 hover:underline font-medium"
                   >
-                    contact@propll.com
+                    Hr@propll.com
                   </a>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function ContactUs() {
                     href="tel:+14155550123"
                     className="text-blue-400 hover:underline font-medium"
                   >
-                    +1 (415) 555-0123
+                    +1 512-975-3668
                   </a>
                 </div>
               </div>

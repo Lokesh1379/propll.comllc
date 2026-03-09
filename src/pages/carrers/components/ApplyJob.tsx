@@ -265,6 +265,7 @@ const ApplyModal: React.FC = () => {
       }
     } catch (error) {
       console.error(error);
+      console.log(error.response);
       setSubmitStatus("error");
       setErrors((prev) => ({
         ...prev,
