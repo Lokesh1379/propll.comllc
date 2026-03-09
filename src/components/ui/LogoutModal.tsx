@@ -1,12 +1,19 @@
-import { setAdminWantToLogout } from "@/features/admin";
+import {
+  resetAdminState,
+  setAccesToken,
+  setAdminWantToLogout,
+  setIsAdminLoggedIn,
+} from "@/features/admin";
 import { RootState } from "@/store/store";
 import { motion, AnimatePresence } from "framer-motion";
 import { LogOut, X } from "lucide-react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const LogoutModal = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const navigateTo = useNavigate();
   const dispatch = useDispatch();
   const { adminWantToLogout } = useSelector(
     (state: RootState) => state.adminData,
@@ -15,7 +22,11 @@ const LogoutModal = () => {
     dispatch(setAdminWantToLogout(false));
   };
   const handleConfirmLogout = () => {
-    setAdminWantToLogout(false);
+    dispatch(setAdminWantToLogout(false));
+    dispatch(setIsAdminLoggedIn(false));
+    dispatch(resetAdminState());
+    dispatch(setAccesToken(""));
+    navigateTo("/admin", { replace: true });
   };
   return (
     <AnimatePresence>

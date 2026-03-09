@@ -30,7 +30,7 @@ const JobDetailsCard = () => {
           {/* Top Bar with Back and Apply */}
           <div className="flex items-center justify-between mb-4 sm:mb-6">
             <Link
-              to={"/carrers-at-propll"}
+              to={"/careers-at-propll"}
               className="flex items-center gap-2 text-gray-600 hover:text-[#0a66c2] transition-colors group"
             >
               <IoMdArrowBack
@@ -61,7 +61,7 @@ const JobDetailsCard = () => {
               <img
                 src={logo}
                 alt={jobDetails?.companyName}
-                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl object-cover border"
+                className="w-12 h-12 p-2 rounded-xl object-cover border"
               />
               <div className="sm:hidden">
                 <h1 className="text-xl font-bold text-gray-800">

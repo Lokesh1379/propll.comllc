@@ -51,9 +51,9 @@ const App = () => (
         <Toaster />
         <ToastPopup />
         <Sonner />
-        <LogoutModal />
         <CreateAdminModal />
         <BrowserRouter>
+          <LogoutModal />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
@@ -114,9 +114,9 @@ const App = () => (
               element={<DatabaseAdministratorsSection />}
             />
             <Route path="/why-us" element={<WhyChooseUsSection />} />
-            <Route path="/carrers-at-propll" element={<CareersPage />} />
+            <Route path="/careers-at-propll" element={<CareersPage />} />
             <Route
-              path={`/carrers-at-propll/:id`}
+              path={`/careers-at-propll/:id`}
               element={<JobDetailsCard />}
             />
             <Route path="/industries" element={<IndustriesWeServeSection />} />

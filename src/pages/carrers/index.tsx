@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Briefcase,
-  Users,
-  Globe,
-  TrendingUp,
-  MapPin,
-  Clock,
-  ArrowRight,
-} from "lucide-react";
+import { Briefcase, Users, Globe, TrendingUp } from "lucide-react";
 import OpenRolesPage from "./components/OpenRolesPage";
 import { useEffect, useRef } from "react";
 import axios from "axios";
@@ -146,15 +138,19 @@ const CareersPage = () => {
       </section>
 
       {/* Open Roles */}
-      <section className="bg-gray-50" ref={jobsRef}>
-        <div className="border">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900">Open Roles</h2>
-            <p className="mt-4 text-gray-500">
+      <section ref={jobsRef} className="bg-gray-50 py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Open Roles
+            </h2>
+            <p className="text-lg text-gray-600">
               Join us in shaping the future of professional networking
             </p>
           </div>
 
+          {/* Jobs Component */}
           <OpenRolesPage jobsData={allJobs} />
         </div>
       </section>

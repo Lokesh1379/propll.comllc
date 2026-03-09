@@ -40,7 +40,7 @@ const Navbar = () => {
     { name: "About", href: "#about", path: "/about-us" },
     { name: "Why Us", href: "/why-us", path: "/why-us" },
     { name: "Contact", href: "#contact", path: "/contact-us" },
-    { name: "Carrers", href: "#careers", path: "/carrers-at-propll" },
+    { name: "Careers", href: "#careers", path: "/careers-at-propll" },
   ];
 
   return (

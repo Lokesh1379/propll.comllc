@@ -26,11 +26,11 @@ const navItems: NavItem[] = [
 
 const Sidebar = () => {
   const { adminTab } = useSelector((state: RootState) => state.commonProps);
+  const { adminDetails } = useSelector((state: RootState) => state.adminData);
   const [isOpen, setIsOpen] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
     const checkMobile = () => {
@@ -47,7 +47,6 @@ const Sidebar = () => {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
   // Close mobile sidebar when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -80,6 +79,7 @@ const Sidebar = () => {
 
   const handleLogout = () => {
     dispatch(setAdminWantToLogout(true));
+    setIsMobile(false);
     // navigate("/login");
   };
 
@@ -194,10 +194,10 @@ const Sidebar = () => {
                       </div>
                       <div className="flex flex-col">
                         <span className="text-sm font-semibold text-slate-800">
-                          Admin Name
+                          {adminDetails?.name}
                         </span>
                         <span className="text-xs text-slate-500">
-                          Super Admin
+                          {adminDetails?.role}
                         </span>
                       </div>
                     </div>
@@ -280,7 +280,7 @@ const Sidebar = () => {
           <div className="flex items-center gap-3 min-w-0">
             {/* Avatar */}
             <div className="w-10 h-10 rounded-full bg-[#0a66c2]/10 flex items-center justify-center text-[#0a66c2] font-semibold flex-shrink-0">
-              A
+              {adminDetails?.name?.[0]}
             </div>
 
             <AnimatePresence>
@@ -293,10 +293,10 @@ const Sidebar = () => {
                   className="flex flex-col min-w-0"
                 >
                   <span className="text-sm font-semibold text-slate-800 truncate">
-                    Admin Name
+                    {adminDetails?.name}
                   </span>
                   <span className="text-xs text-slate-500 truncate">
-                    Super Admin
+                    {adminDetails?.role}
                   </span>
                 </motion.div>
               )}

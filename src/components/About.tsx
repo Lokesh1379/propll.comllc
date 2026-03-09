@@ -2,32 +2,37 @@ import { Target, Users, Award, Lightbulb } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-secondary/30 relative overflow-hidden">
+    <section
+      id="about"
+      className="py-24 bg-secondary/30 relative overflow-hidden"
+    >
       {/* Background Glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-electric/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal/5 rounded-full blur-3xl" />
-      
+
       <div className="container relative z-10 px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
-              About Propll LLC
+              About Propll.com LLC
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
               Your Trusted Partner in{" "}
               <span className="text-gradient">Digital Excellence</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Propll LLC is a leading technology services company dedicated to helping enterprises 
-              navigate the complexities of digital transformation. With deep expertise across 
-              software engineering, AI, cloud, and cybersecurity, we deliver solutions that 
-              drive measurable business outcomes.
+              Propll.com LLC is a leading technology services company dedicated
+              to helping enterprises navigate the complexities of digital
+              transformation. With deep expertise across software engineering,
+              AI, cloud, and cybersecurity, we deliver solutions that drive
+              measurable business outcomes.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Our team of seasoned technologists combines industry knowledge with cutting-edge 
-              innovation to create solutions that are not just functional, but transformative. 
-              We believe in building long-term partnerships that evolve with your business needs.
+              Our team of seasoned technologists combines industry knowledge
+              with cutting-edge innovation to create solutions that are not just
+              functional, but transformative. We believe in building long-term
+              partnerships that evolve with your business needs.
             </p>
 
             {/* Stats Row */}
@@ -38,9 +43,16 @@ const About = () => {
                 { value: "50+", label: "Industries Served" },
                 { value: "98%", label: "Client Retention" },
               ].map((stat, index) => (
-                <div key={index} className="text-center p-4 rounded-xl bg-card border border-border">
-                  <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
+                <div
+                  key={index}
+                  className="text-center p-4 rounded-xl bg-card border border-border"
+                >
+                  <div className="text-2xl font-bold text-foreground">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -52,22 +64,26 @@ const About = () => {
               {
                 icon: Target,
                 title: "Mission-Driven",
-                description: "Committed to delivering technology solutions that create real business value and competitive advantage.",
+                description:
+                  "Committed to delivering technology solutions that create real business value and competitive advantage.",
               },
               {
                 icon: Users,
                 title: "Client-Centric",
-                description: "Every solution is tailored to your unique challenges, goals, and operational requirements.",
+                description:
+                  "Every solution is tailored to your unique challenges, goals, and operational requirements.",
               },
               {
                 icon: Award,
                 title: "Excellence First",
-                description: "We hold ourselves to the highest standards of quality, security, and professional integrity.",
+                description:
+                  "We hold ourselves to the highest standards of quality, security, and professional integrity.",
               },
               {
                 icon: Lightbulb,
                 title: "Innovation Leaders",
-                description: "Continuously exploring emerging technologies to keep our clients ahead of the curve.",
+                description:
+                  "Continuously exploring emerging technologies to keep our clients ahead of the curve.",
               },
             ].map((value, index) => (
               <div

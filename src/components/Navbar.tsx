@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { setActiveLink } from "@/features/commonProps";
+import logo from "@/assets/propll-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
     { name: "About", path: "/about-us" },
     // { name: "Why Us", path: "/why-us" },
     { name: "Contact", path: "/contact-us" },
-    { name: "Carrers", path: "/carrers-at-propll" },
+    { name: "Careers", path: "/careers-at-propll" },
   ];
 
   /* =========================
@@ -112,26 +113,38 @@ const Navbar = () => {
             className="flex items-center gap-3 group"
             onClick={() => handleLinkClick("Home")}
           >
-            <div className="flex flex-col">
-              <span
-                className={`text-2xl font-bold tracking-tight ${
-                  isScrolled ? "text-white" : "text-[#191919]"
-                }`}
-              >
-                <strong
-                  className={isScrolled ? "text-blue-500" : "text-blue-700"}
-                >
-                  P
-                </strong>
-                ropll
-              </span>
-              <span
-                className={`text-[10px] font-semibold tracking-widest uppercase mt-0.5 ${
-                  isScrolled ? "text-white/80" : "text-[#666666]"
-                }`}
-              >
-                .COM LLC
-              </span>
+            <div className="flex items-center gap-2">
+              {/* Logo and Brand Container */}
+              <div className="flex items-center gap-2">
+                <img
+                  src={logo}
+                  alt="Propll.com Logo"
+                  className="w-10 h-10 object-contain rounded-lg p-1 bg-white"
+                />
+
+                {/* Brand Name and LLC Container */}
+                <div className="flex flex-col">
+                  <span
+                    className={`text-2xl font-bold tracking-tight leading-none ${
+                      isScrolled ? "text-white" : "text-[#191919]"
+                    }`}
+                  >
+                    <strong
+                      className={isScrolled ? "text-blue-500" : "text-blue-700"}
+                    >
+                      P
+                    </strong>
+                    ropll
+                  </span>
+                  <span
+                    className={`text-[10px] font-semibold tracking-widest uppercase leading-none mt-0.5 ${
+                      isScrolled ? "text-white/80" : "text-[#666666]"
+                    }`}
+                  >
+                    .COM LLC
+                  </span>
+                </div>
+              </div>
             </div>
           </Link>
 

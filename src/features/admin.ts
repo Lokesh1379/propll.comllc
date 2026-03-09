@@ -83,6 +83,7 @@ export const adminSlice = createSlice({
     setAdminDetails: (state, action: PayloadAction<Admin>) => {
       state.adminDetails = action.payload;
     },
+    resetAdminState: () => initialState,
   },
 });
 
@@ -94,6 +95,7 @@ export const {
   setAdminWantToLogout,
   setCreatingAdmin,
   setAdminDetails,
+  resetAdminState,
 } = adminSlice.actions;
 
 export default adminSlice.reducer;

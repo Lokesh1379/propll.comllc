@@ -10,8 +10,8 @@ const AdminLogin = () => {
   const { baseUrl } = useSelector((state) => state.commonProps);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: "propll.ceo@propll.com",
-    password: "Propll.ceo1@propll.com",
+    email: "",
+    password: "",
   });
   const navigateTo = useNavigate();
   const handleChange = (e) => {

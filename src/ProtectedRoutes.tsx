@@ -18,12 +18,12 @@ interface ProtectedRouteProps {
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   allowedRoles = [],
 }) => {
-  const { isAdminLoggedIn } = useSelector(
+  const { isAdminLoggedIn, accessToken } = useSelector(
     (state: RootState) => state.adminData,
   );
 
   // If admin is not logged in
-  if (!isAdminLoggedIn) {
+  if (!isAdminLoggedIn && !accessToken) {
     return <Navigate to="/unauthorized" replace />;
   }
 

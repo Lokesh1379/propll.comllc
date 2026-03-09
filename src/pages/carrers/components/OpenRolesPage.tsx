@@ -2,16 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  MapPin,
-  Briefcase,
-  Search,
-  X,
-  Building2,
-  Clock,
-  GraduationCap,
-  BookmarkPlus,
-} from "lucide-react";
+import { MapPin, Briefcase, X, Clock, GraduationCap } from "lucide-react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -118,7 +109,7 @@ const OpenRolesPage = ({ jobsData }: { jobsData: Job[] }) => {
       });
       if (response.status === 200) {
         dispatch(setJobDetails(response.data.data));
-        navigateTo(`/carrers-at-propll/${jobId}`);
+        navigateTo(`/careers-at-propll/${jobId}`);
       }
     } catch (error) {
       console.error(error);
@@ -165,7 +156,7 @@ const OpenRolesPage = ({ jobsData }: { jobsData: Job[] }) => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
               {filteredJobs.map((job, index) => (
                 <motion.div
@@ -203,12 +194,6 @@ const OpenRolesPage = ({ jobsData }: { jobsData: Job[] }) => {
                           </h4>
                         </div>
                       </div>
-                      <button
-                        aria-label="Save job"
-                        className="text-gray-400 hover:text-[#0a66c2] transition-colors"
-                      >
-                        <BookmarkPlus size={20} />
-                      </button>
                     </div>
 
                     {/* Title & Subtitle */}

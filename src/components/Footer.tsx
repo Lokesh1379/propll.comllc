@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import logo from "@/assets/propll-logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -16,11 +16,34 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-electric to-teal rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">P</span>
+              <div className="flex place-items-center justify-start gap-2 mb-3">
+                {/* Logo and Brand Container */}
+                <div className="flex items-center gap-2">
+                  <img
+                    src={logo}
+                    alt="Propll.com Logo"
+                    className="w-10 h-10 object-contain rounded-lg p-1 bg-white"
+                  />
+
+                  {/* Brand Name and LLC Container */}
+                  <div className="flex flex-col">
+                    <span
+                      className={`text-2xl font-bold tracking-tight leading-none 
+                        text-white
+                      `}
+                    >
+                      <strong className=" text-blue-500">P</strong>
+                      ropll
+                    </span>
+                    <span
+                      className={`text-[10px] font-semibold tracking-widest uppercase leading-none mt-0.5
+                        text-white/80
+                      `}
+                    >
+                      .COM LLC
+                    </span>
+                  </div>
                 </div>
-                <span className="text-xl font-bold">Propll LLC</span>
               </div>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
                 Empowering enterprises with innovative technology solutions that
@@ -43,7 +66,7 @@ const Footer = () => {
                 ].map((service) => (
                   <li key={service}>
                     <Link
-                      to="core-technologies"
+                      to="/core-technologies"
                       className="text-white/60 hover:text-white text-sm transition-colors"
                     >
                       {service}
@@ -58,10 +81,10 @@ const Footer = () => {
               <h4 className="font-semibold mb-4 text-white/90">Company</h4>
               <ul className="space-y-3">
                 {[
-                  { label: "Services", href: "services" },
-                  { label: "About Us", href: "about-us" },
-                  { label: "Careers", href: "carrers-at-propll" },
-                  { label: "Contact Us", href: "contact-us" },
+                  { label: "Services", href: "/services" },
+                  { label: "About Us", href: "/about-us" },
+                  { label: "Careers", href: "/careers-at-propll" },
+                  { label: "Contact Us", href: "/contact-us" },
                 ].map((link) => (
                   <li key={link.label}>
                     <Link
@@ -81,13 +104,11 @@ const Footer = () => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-accent mt-0.5" />
-                  <span className="text-white/60 text-sm">hr@propll.com</span>
+                  <span className="text-white/60 text-sm">Hr@propll.com</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-accent mt-0.5" />
-                  <span className="text-white/60 text-sm">
-                    +1 (512) 9753-668{" "}
-                  </span>
+                  <span className="text-white/60 text-sm">+1 512-975-3668</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-accent mt-0.5" />
@@ -108,7 +129,7 @@ const Footer = () => {
         <div className="container px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm">
-              © {currentYear} Propll LLC. All rights reserved.
+              © {currentYear} Propll.com LLC. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a
