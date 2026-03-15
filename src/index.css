@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 @tailwind base;
 
 /* Custom animation for draw line effect */
@@ -20,8 +21,6 @@
 }
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
@@ -62,18 +61,43 @@
     --teal: 187 85% 43%;
     --charcoal: 220 13% 18%;
     --slate: 215 16% 47%;
-    
+
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 12%) 0%, hsl(217 80% 25%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(187 85% 43%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(217 91% 8%) 0%, hsl(217 80% 15%) 50%, hsl(220 70% 20%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(199 89% 48% / 0.15) 0%, transparent 70%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(217 91% 12%) 0%,
+      hsl(217 80% 25%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(199 89% 48%) 0%,
+      hsl(187 85% 43%) 100%
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(217 91% 8%) 0%,
+      hsl(217 80% 15%) 50%,
+      hsl(220 70% 20%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(210 20% 98%) 100%
+    );
+    --gradient-glow: radial-gradient(
+      ellipse at center,
+      hsl(199 89% 48% / 0.15) 0%,
+      transparent 70%
+    );
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(217 91% 12% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(217 91% 12% / 0.07), 0 2px 4px -2px hsl(217 91% 12% / 0.05);
-    --shadow-lg: 0 10px 25px -3px hsl(217 91% 12% / 0.1), 0 4px 6px -4px hsl(217 91% 12% / 0.05);
+    --shadow-md:
+      0 4px 6px -1px hsl(217 91% 12% / 0.07),
+      0 2px 4px -2px hsl(217 91% 12% / 0.05);
+    --shadow-lg:
+      0 10px 25px -3px hsl(217 91% 12% / 0.1),
+      0 4px 6px -4px hsl(217 91% 12% / 0.05);
     --shadow-xl: 0 20px 50px -10px hsl(217 91% 12% / 0.15);
     --shadow-glow: 0 0 40px hsl(199 89% 48% / 0.2);
 
@@ -138,7 +162,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
   }
 }
 
@@ -187,10 +211,6 @@
     animation: float 6s ease-in-out infinite;
   }
 
-  .animate-pulse-slow {
-    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
   @keyframes fadeUp {
     from {
       opacity: 0;
@@ -203,8 +223,12 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes scaleIn {
@@ -219,13 +243,28 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
 }

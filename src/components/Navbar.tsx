@@ -175,7 +175,7 @@ const Navbar = () => {
 
             {/* Animated Underline */}
             <div
-              className={`absolute -bottom-1 h-[2px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+              className={`absolute -bottom-1 h-[2px] rounded-full transition-all duration-500  ${
                 isScrolled ? "bg-white" : "bg-[#0A66C2]"
               }`}
               style={{
